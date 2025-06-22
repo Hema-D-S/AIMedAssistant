@@ -11,3 +11,9 @@ AIMedAssistant VoiceBot is an intelligent healthcare assistant that takes **voic
 -> **Symptom–Disease Matching**: Matches voice-described symptoms with image-based findings for reliability.
 
 
+|          Area         |         Tech Used            |
+|-----------------------|------------------------------|
+| Frontend UI           | Gradio                       |
+| Voice Transcription   | Whisper-v3 (via GROQ API)    |
+| Image Understanding   | Meta LLaMA-4 vision model    |
+| Text-to-Speech        | Google TTS / ElevenLabs      |
