@@ -16,4 +16,6 @@ AIMedAssistant VoiceBot is an intelligent healthcare assistant that takes **voic
 | Frontend UI           | Gradio                       |
 | Voice Transcription   | Whisper-v3 (via GROQ API)    |
 | Image Understanding   | Meta LLaMA-4 vision model    |
-| Text-to-Speech        | Google TTS / ElevenLabs      |
+| Text-to-Speech        | Google TTS & ElevenLabs      |
+| MP3 to Wav            | FFMPEG                       |
+| Wav to MP3            | PyDub                        |
