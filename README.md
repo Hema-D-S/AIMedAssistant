@@ -2,10 +2,7 @@
 
 AIMedAssistant VoiceBot is an intelligent healthcare assistant that takes **voice and image inputs** from the user and responds like a professional doctor. It uses **speech recognition**, **image analysis**, and **natural language generation** to provide a simulated medical diagnosis and advice.
 
----
-
-##Features
-
+## Features
 -> **Voice Input**: User can describe their symptoms by speaking.
 -> **Transcription Engine**: Speech is transcribed using Whisper-v3 via GROQ API.
 -> **Image Analysis**: The bot analyzes uploaded medical images using a LLaMA-4 based vision model.
