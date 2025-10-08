@@ -1,0 +1,15 @@
+gradio
+gradio-client
+groq
+gtts
+elevenlabs
+SpeechRecognition
+pyaudio
+pydub
+ffmpy
+pillow
+numpy
+pandas
+fastapi
+requests
+python-dotenv
