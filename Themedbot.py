@@ -21,13 +21,14 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-api_key = os.getenv("ELEVENLABS_API_KEY")
+api_key = os.environ.get("ELEVENLABS_API_KEY")
 if not api_key:
-    raise EnvironmentError("ELEVENLABS_API_KEY not found in environment variables.")
+    print("Warning: ELEVENLABS_API_KEY not found in environment variables. ElevenLabs TTS will be disabled.")
+    # Don't raise an error, just disable ElevenLabs functionality
 
-client = ElevenLabs(api_key=api_key)
 
 def text_to_speech_with_elevenlabs_old(input_text, output_filepath):
+    client = ElevenLabs(api_key=api_key)
     audio=client.generate(
         text= input_text ,
         voice= "Aria",
@@ -69,11 +70,16 @@ def text_to_speech_with_gtts(input_text,output_filepath):
     except Exception as e:
         print(f"An error occurred while trying to play the audio: {e}")
 
-input_text="Hi this is ai with hassan Autoplay testing"
+input_text="Hi, Autoplay testing"
 #text_to_speech_with_gtts(input_text=input_text, output_filepath="gtts_testing_autoplay.mp3")
 
 def text_to_speech_with_elevenlabs(input_text, output_filepath):
-
+    if not api_key:
+        print("ElevenLabs API key not available, falling back to gTTS")
+        text_to_speech_with_gtts(input_text, output_filepath)
+        return
+    
+    client = ElevenLabs(api_key=api_key)
     audio=client.generate(
         text= input_text ,
         voice= "Aria",
